@@ -1,0 +1,1 @@
+{"required":true,"minVersion":"0.8","package":"dev.tactical.mixin","compatibilityLevel":"JAVA_21","mixins":["InventoryMixin","SlotMixin","DeathMixin","MenuSwapMixin","OffhandSwapMixin","LootContainerMixin","LootOpenersMixin"],"injectors":{"defaultRequire":1}}

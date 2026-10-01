@@ -1,0 +1,28 @@
+plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.147' }
+version = '1.0.13'
+group = 'dev.tactical'
+base.archivesName = 'tactical-inventory-1.21.1-neoforge'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.withSourcesJar()
+repositories { mavenCentral(); maven { url = 'https://maven.firstdark.dev/snapshots' } }
+neoForge {
+    version = '21.1.251'
+    runs { client {
+        client()
+        if (providers.gradleProperty('bagSmoke').isPresent()) {
+            gameDirectory = file('run-ui-smoke')
+        }
+    } }
+    mods { tactical_inventory { sourceSet(sourceSets.main) } }
+}
+dependencies {
+    implementation files('libs/gwo.jar')
+    implementation 'com.lowdragmc.ldlib2:ldlib2-neoforge-1.21.1:2.2.40:all'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+test { useJUnitPlatform() }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.withType(Jar).configureEach { from('LICENSE') }
+if (providers.gradleProperty('bagSmoke').isPresent()) { sourceSets.main.java.srcDir 'src/smoke/java' }

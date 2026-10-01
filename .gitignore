@@ -1,0 +1,25 @@
+# Generated Gradle and IDE files
+/.gradle/
+/build/
+/out/
+/.idea/
+/.vscode/
+*.iml
+*.class
+*.log
+*.hprof
+
+# Local game instances, worlds, licensed content and third-party mods
+/run/
+/run-*/
+/libs/*
+!/libs/README.md
+
+# Release binaries and private local verification artifacts
+/releases/
+/.audit/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
