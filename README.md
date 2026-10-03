@@ -1,3 +1,6 @@
+> **项目已合并至 [RaidCore](https://github.com/HerraStudio/RaidCore)。**
+> 本仓库作为历史归档保留，后续开发与问题反馈请前往 RaidCore。
+
 # 战术多格背包 1.0.13
 
 Minecraft 1.21.1 / NeoForge 21.1.251 / Java 21，界面由 LDLib2 构建。
